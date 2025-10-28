@@ -8,7 +8,7 @@ from pydantic import BaseModel
 from datetime import datetime
 
 
-os.environ["LINE_CHANNEL_ACCESS_TOKEN"] = "q3Zl8rCb6XFKEn3sCSkb7fjlmRXW7IOzXb8/xR3kaDu9vn1hI6prq4Fo4GlipLBwZaIBe1dnMPJg5rdQ0DyXUS0OY1kMIOilXyyYY5dLnDOCrc9YELGhdLphq3zr9KhFPWPpz1v1ZNDTdNnpLYPWDQdB04t89/1O/w1cDnyilFU="
+os.environ["LINE_CHANNEL_ACCESS_TOKEN"] = "19Qm+au/fneSwUbcDMOXN3M2yRACl+9GT8c5OSQ7NVFVX0dFlgkB25b7/Rgc4CLH2fq4jshZibA3ZFCEl0Qsgqfp6e2Yte3tzfBZl31mT99QZYS2FIUNzOdBalFoFSDiDwhZV7pbgXOc9lBIJUbnJAdB04t89/1O/w1cDnyilFU="
 os.environ["GOOGLE_API_KEY"] = ""
 # Gemini key
 app = FastAPI(title="GPS SOS API")
