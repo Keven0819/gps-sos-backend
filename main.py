@@ -6,6 +6,7 @@ from fastapi import FastAPI, Request, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from datetime import datetime
+from zoneinfo import ZoneInfo
 
 
 os.environ["LINE_CHANNEL_ACCESS_TOKEN"] = "19Qm+au/fneSwUbcDMOXN3M2yRACl+9GT8c5OSQ7NVFVX0dFlgkB25b7/Rgc4CLH2fq4jshZibA3ZFCEl0Qsgqfp6e2Yte3tzfBZl31mT99QZYS2FIUNzOdBalFoFSDiDwhZV7pbgXOc9lBIJUbnJAdB04t89/1O/w1cDnyilFU="
@@ -96,7 +97,7 @@ async def websocket_endpoint(ws: WebSocket):
 @app.post("/sos/button")
 async def sos_button_trigger(loc: OptionalLocationRequest, request: Request):
     client_ip = request.client.host
-    timestamp = datetime.now().strftime("%Y年%m月%d日 %H:%M:%S")
+    timestamp = datetime.now(ZoneInfo("Asia/Taipei")).strftime("%Y年%m月%d日 %H:%M:%S")
     if not loc or loc.latitude is None or loc.longitude is None:
         return {"error":"沒有 GPS"}
     address = get_address_from_coordinates(loc.latitude, loc.longitude)
